@@ -2,9 +2,9 @@ class Solution:
     def ss(self,nums,arr,target,idx):
         if idx == len(nums):
             if target == 0 :
-                print(arr)
+             
                 self.ans.append(arr.copy())
-                print(self.ans)
+                
             return
        
         if nums[idx]<=target:
@@ -20,7 +20,6 @@ class Solution:
 
     def combinationSum(self, nums: List[int], target: int) -> List[List[int]]:
         self.ans = []
-        arr = []
-        self.ss(nums,arr,target,0)
+        self.ss(nums,[],target,0)
         return self.ans
         
