@@ -19,7 +19,7 @@ class RandomizedSet:
         return False
         
     def getRandom(self) -> int:
-        return random.choice(list(self.box))
+        return random.choice(tuple(self.box))
 
 
         
