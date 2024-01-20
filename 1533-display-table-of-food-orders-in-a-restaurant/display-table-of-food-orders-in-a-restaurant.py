@@ -26,7 +26,6 @@ class Solution:
                 else:
                     temp.append(str(0))
             ans.append(temp)
-        print(m)
         return ans
         
 
