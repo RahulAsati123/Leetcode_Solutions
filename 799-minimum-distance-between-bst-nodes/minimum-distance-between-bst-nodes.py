@@ -8,19 +8,22 @@ class Solution:
     def preorder(self,root):
         if not root:
             return
-        self.arr.append(root.val)
+        
         self.preorder(root.left)
+        self.arr.append(root.val)
         self.preorder(root.right)
 
     def minDiffInBST(self, root: Optional[TreeNode]) -> int:
-        min_diff = 10000000
+        min_diff = 100000000000
         self.arr = []
         self.preorder(root)
-        self.arr.sort()
         for i in range(len(self.arr)-1):
-            if self.arr[i+1]-self.arr[i]<min_diff:
-                min_diff = self.arr[i+1]-self.arr[i]
+            if self.arr[i+1]-self.arr[i] < min_diff:
+                min_diff = self.arr[i+1] - self.arr[i]
         return min_diff
+        
+
+        
 
 
         
