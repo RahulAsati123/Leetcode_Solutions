@@ -16,8 +16,11 @@ class Solution:
             self.ans = root
             return
 
-        self.preorder(root.left,v)
-        self.preorder(root.right,v)
+        if root.val>v:
+            self.preorder(root.left,v)
+        else:
+            self.preorder(root.right,v)
+
       
         
         
