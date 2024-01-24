@@ -11,17 +11,18 @@ class Solution:
         
         count +=1
         if not root.left and not root.right:
-            self.arr.append(count)
+            if self.min_count >count:
+                self.min_count = count
             count = 0
         self.preorder(root.left,count)
         self.preorder(root.right,count)
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        self.arr = []
+        self.min_count = 1000000
         self.preorder(root,0)
-        self.arr.sort()
-        if len(self.arr)==0:
+        if self.min_count == 1000000:
             return 0
-        return self.arr[0]
+        return self.min_count
+       
 
 
 
