@@ -5,12 +5,12 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == target:
                 start = i
-                break
-
-        for i in range(len(nums)-1,-1,-1):
-            if nums[i] == target:
                 end = i
                 break
+
+        for i in range(start+1,len(nums)):
+            if nums[i] == target:
+                end = i
         return [start,end]
             
             
