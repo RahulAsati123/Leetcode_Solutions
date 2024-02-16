@@ -5,9 +5,13 @@ class Solution:
             if a in dic.keys():
                 dic[a]+=1
             else: dic[a]=1
-        l = sorted(list(dic.values()))
-        while k>0:
-            k = k - l[0]
-            l.pop(0)
-        if k==0: return len(l)
-        else: return len(l)+1
+        heap = list(dic.values())
+        heapq.heapify(heap)
+        
+        res = len(heap)
+        while k>0 and heap:
+            f = heapq.heappop(heap)
+            if k>=f:
+                k-=f
+                res -=1
+        return res
